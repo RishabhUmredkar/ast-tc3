@@ -1,0 +1,1294 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Festava Live - Bootstrap 5 CSS Template</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/templatemo-festava-live.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- carousel -->
+    <style>
+/*  Counter Section  */
+
+#counter {    
+    background-color: #ffffff;
+    color: #c0c0c0;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    padding: 100px 0;
+}
+#counter .count {
+    padding: 30px;
+    background: #cccccc;
+    color: #fff;
+    text-align: center;
+}
+.count h4 {
+    /* color: #800080; */
+	font-size: 16px;
+	margin-top: 0;
+}
+#counter .count .fa {
+    font-size: 40px;
+    display: block;
+    color: #fff;
+}
+#counter .number {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+/*  Pricing Section  */
+
+#pricing {
+    background: #f7f7f7;
+}
+.pricing-items {
+    padding-top: 50px;
+}
+.pricing-item {
+    background: #fff;
+    position: relative;
+    box-shadow: 0 0 9px 0 rgba(130, 121, 121, .2);
+    padding: 50px 0px;
+    border-top-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+}
+.pricing-item.active {
+    top: -50px;
+}
+.price-list li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.price-list .price {
+    font-size: 30px;
+    font-weight: bold;
+}
+.pricing-item .ribbon {
+    margin: -50px 0 20px;
+    display: block;
+    background-color: #ffb400;
+    padding: 15px 0 2px;
+    opacity: 0.8;
+    border-top-right-radius: 2em;
+}
+.pricing-item:hover .ribbon {
+    background-color: #ffb400;
+	opacity: 1;
+}
+.pricing-item.active .ribbon {
+    background-color: #ffb400;
+	opacity: 1;
+}
+.pricing-item .ribbon p {
+    color: #fff;
+    font-size: 22px;
+    margin: 0 0 10px;
+    font-weight: 600;
+}
+.pricing-item.active .price-list li, .pricing-item:hover .price-list li {
+    color: #848181;;
+}
+ul.price-list {
+    margin-bottom: 30px;
+    padding: 0;
+}
+.btn-price {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 14px 40px;
+    -webkit-border-radius: 26px;
+    -moz-border-radius: 26px;
+    -o-border-radius: 26px;
+    border-radius: 26px;
+    border: 1px solid #848181;
+    background-color: transparent;
+    color: #848181;
+}
+.pricing-item:hover .btn-price,
+.active .btn-price {
+    border: 1px solid #ffb400;
+    background-color: #ffb400;
+    color: #fff;
+}
+.btn-price:focus {
+    background-color: transparent;
+    text-decoration: none;
+}
+@media only screen and (max-width: 767px) {
+    .pricing-items {
+        padding-top: 0;
+    }
+    .pricing-item.active {
+        top: 20px;
+        margin-bottom: 40px;
+    }
+}
+
+
+    </style>
+    <style>#container {
+        height: 100vh;
+        width: 100%;
+        margin: 0 5px;
+        padding: 0;
+        background: #800080;
+        display: grid;
+        place-items: center;
+      }
+      
+      #slider-container {
+        height: 450px;
+        width: 90vw;
+        max-width: 1400px;
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+      }
+      
+      #slider-container .btn {
+        position: absolute;
+        top: calc(50% - 30px);
+        height: 30px;
+        width: 30px;
+        border-left: 8px solid pink;
+        border-top: 8px solid pink;
+      }
+      
+      #slider-container .btn:hover {
+        transform: scale(1.2);
+      }
+      
+      #slider-container .btn.inactive {
+        border-color: rgb(153, 121, 126);
+      }
+      
+      #slider-container .btn:first-of-type {
+        transform: rotate(-45deg);
+        left: 10px;
+      }
+      
+      #slider-container .btn:last-of-type {
+        transform: rotate(135deg);
+        right: 10px;
+      }
+      
+      #slider-container #slider {
+        display: flex;
+        width: 1000%;
+        height: 100%;
+        transition: all 0.5s;
+      }
+      
+      #slider-container #slider .slide {
+        margin: auto 10px;
+        background-color: #a847a4;
+        box-shadow: 2px 2px 4px 2px white, -2px -2px 4px 2px white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: calc(10% - 20px); /* Default width with added space */
+      }
+      
+      #slider-container #slider .slide img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      
+      @media only screen and (min-width: 1100px) {
+        #slider-container #slider .slide {
+          width: calc(2.5% - 20px);
+        }
+      }
+      
+      @media only screen and (max-width: 1100px) {
+        #slider-container #slider .slide {
+          width: calc(3.3333333% - 20px);
+        }
+      }
+      
+      @media only screen and (max-width: 900px) {
+        #slider-container #slider .slide {
+          width: calc(5% - 20px);
+        }
+      }
+      
+      @media only screen and (max-width: 550px) {
+        #slider-container #slider .slide {
+          width: calc(10% - 20px);
+        }
+      }
+      
+ </style>
+</head>
+
+<body>
+
+    <main>
+
+       <!-- <header class="site-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-person custom-icon me-2"></i>
+                            <strong class="text-white">Asterisc Technocrat</strong>
+                        </p>
+                    </div> 
+                </div>
+            </div>
+        </header>  -->
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    AsteriscTechnocrat
+                </a>
+
+                <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Join Us</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_2">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_3">Team</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_4">Schedule</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_5">Pricing</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                        </li>
+                    </ul>
+
+                    <a href="ticket.html" class="btn custom-btn d-lg-block d-none">Join Us</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="hero-section" id="section_1">
+            <div class="section-overlay"></div>
+
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="row">
+
+                    <div class="col-12 mt-auto mb-5 text-center">
+                        <!-- <small>Festava Live Presents</small> -->
+
+                        <h1 class="text-white mb-5">CODING IS NOT JUST CODE,<br> THAT IS A LIVE THING TO<br> SERVE EVERYONE!
+                        </h1>
+
+                        <a class="btn custom-btn smoothscroll" href="#section_2">Explore</a>
+                    </div>
+
+                    <!-- <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
+                        <div class="date-wrap">
+                            <h5 class="text-white">
+                                <i class="custom-icon bi-clock me-2"></i>
+                                10 - 12<sup>th</sup>, Dec 2023
+                            </h5>
+                        </div>
+
+                        <div class="location-wrap mx-auto py-3 py-lg-0">
+                            <h5 class="text-white">
+                                <i class="custom-icon bi-geo-alt me-2"></i>
+                                National Center, United States
+                            </h5>
+                        </div>
+
+                        <div class="social-share">
+                            <ul class="social-icon d-flex align-items-center justify-content-center">
+                                <span class="text-white me-3">Share:</span>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-facebook"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-twitter"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-instagram"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="video/mainVid.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+<section class=" container-md section-padding">
+
+    <div class="row">
+        <div class="col-md-12">
+           <h2 class="headline">Real-World Experience for Career Success </h2>
+           <div class="description justify-content-center">
+              <p>
+                 &nbsp;<br>
+                 We offer real-world experience, showing you just what it’s like to work at the highest-level, accelerating the progression of your career, and setting you up for success. As a student intern,<br> the knowledge and skills you’ve gained during your studies will come to life.
+              </p>
+              <p>As an intern with us, you’ll:</p>
+              <ol>
+                 <li>Have a big impact. You’ll own your project start to finish - diving deep into products, services and programs that will impact millions of customers.</li>
+                 <li>Gain skills. Through formalized training and hands-on learning, you’ll analyze data, problem solve, and design solutions with the customer at the center.</li>
+                 <li>Build a network. From day-to-day to special events, you’ll have the chance to link up with peers globally.</li>
+                 <li>Receive a mentor. Your manager pairs you with a mentor who will support and coach you throughout your internship - providing valuable feedback to ensure success.</li>
+              </ol>
+              <p>
+                 Our internships are for rising seniors and recent graduates with an undergraduate degree, Master’s degree, MBA, or PhD.
+              </p>
+              <p>&nbsp;</p>
+              <p>
+                 <br>
+                 <strong>Hear from recent graduates</strong>
+              </p>
+              <p>
+                 <br>
+                 “Asterics provided a lot of responsibility for me as an intern because I had to make changes to my team’s codebase and these changes had the potential to be pushed out to customers.<br> I felt that the work I was doing was impactful.”<br>
+                 <em>Edward A.</em>
+              </p>
+              <p>
+                 <br>
+                 “At “Asterics, I’m given the flexibility to fail, in the sense that failure is not something to shy away from or to be scared about.”<br>
+                 <em>Nnedimkpa N.</em>
+              </p>
+              <p>
+                 <br>
+                 “I’m very grateful for this opportunity, which is a fantastic head start to my career and makes a positive impact in the industry.”<br>
+                 <em>Pratik K.</em>
+              </p>
+           </div>
+        </div>
+     </div>
+</section>
+
+
+    <section class="articles section-padding ">
+        <article>
+          <div class="article-wrapper">
+            <figure>
+                <iframe width="100%" height="220" src="https://www.youtube-nocookie.com/embed/XW-u-bwk9es?modestbranding=1&enablejsapi=1&color=white&rel=0&showinfo=0&origin=https://www.amazon.jobs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+            </figure>
+            <div class="article-body">
+              <h2>MEET RHONDU, SOFTWARE DEVELOPMENT ENGINEER</h2>
+              <p>
+                This former #amazonintern and Shakespeare enthusiast is charting his own path and building the future for millions of customers.
+              </p>
+              <a href="#" class="read-more">
+                Read more <span class="sr-only">about this is some title</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+          <div class="article-wrapper">
+            <figure>
+                <iframe width="100%" height="220" src="https://www.youtube-nocookie.com/embed/jRZzRiEapyQ?modestbranding=1&enablejsapi=1&color=white&rel=0&showinfo=0&origin=https://www.amazon.jobs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>  
+            </figure>
+            <div class="article-body">
+              <h2>HEAR FROM ASTERICS INTERNS</h2>
+              <p>
+                Learn what it’s like to work at Asterics where intern projects make a big impact for customers around the globe.              </p>
+              <a href="#" class="read-more">
+                Read more <span class="sr-only">about this is some title</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article>
+      
+          <div class="article-wrapper">
+            <figure>
+                <iframe width="100%" height="220" src="https://www.youtube-nocookie.com/embed/HarPN825jxk?modestbranding=1&enablejsapi=1&color=white&rel=0&showinfo=0&origin=https://www.amazon.jobs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+            </figure>
+            <div class="article-body">
+              <h2>A DAY IN THE LIFE OF A SDE INTERN AT ASTERICS</h2>
+              <p>
+                Peek into a day with Kazeem, an SDE intern who worked in Amazon's Seattle office for his summer internship.                    </p>
+            </p>
+              <a href="#" class="read-more">
+                Read more <span class="sr-only">about this is some title</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+      <div id="container">
+        <div id="slider-container">
+          <span onclick="slideRight()" class="btn"></span>
+          <div id="slider">
+            <div class="slide"><span><img src="images/chandrakant.jpg" class="artists-image img-fluid"></span></div>
+            <div class="slide"><span><img src="images/pooja2.jpg" class="artists-image img-fluid"></span></div>/
+            <div class="slide"><span><img src="images/chandrakant.jpg" class="artists-image img-fluid"></span></div>
+            <div class="slide"><span><img src="images/pooja2.jpg" class="artists-image img-fluid"></span></div>
+
+            <div class="slide"><span><img src="images/chandrakant.jpg" class="artists-image img-fluid"></span></div>
+            <div class="slide"><span><img src="images/pooja2.jpg" class="artists-image img-fluid"></span></div>
+
+            <div class="slide"><span><img src="images/chandrakant.jpg" class="artists-image img-fluid"></span></div>
+            <div class="slide"><span><img src="images/pooja2.jpg" class="artists-image img-fluid"></span></div>
+ </div>
+          <span onclick="slideLeft()" class="btn"></span>
+        </div>
+      </div>
+     
+        <script>
+    var container = document.getElementById('container')
+    var slider = document.getElementById('slider');
+    var slides = document.getElementsByClassName('slide').length;
+    var buttons = document.getElementsByClassName('btn');
+    
+    
+    var currentPosition = 0;
+    var currentMargin = 0;
+    var slidesPerPage = 0;
+    var slidesCount = slides - slidesPerPage;
+    var containerWidth = container.offsetWidth;
+    var prevKeyActive = false;
+    var nextKeyActive = true;
+    
+    window.addEventListener("resize", checkWidth);
+    
+    function checkWidth() {
+        containerWidth = container.offsetWidth;
+        setParams(containerWidth);
+    }
+    
+    function setParams(w) {
+        if (w < 551) {
+            slidesPerPage = 1;
+        } else {
+            if (w < 901) {
+                slidesPerPage = 2;
+            } else {
+                if (w < 1101) {
+                    slidesPerPage = 3;
+                } else {
+                    slidesPerPage = 4;
+                }
+            }
+        }
+        slidesCount = slides - slidesPerPage;
+        if (currentPosition > slidesCount) {
+            currentPosition -= slidesPerPage;
+        };
+        currentMargin = - currentPosition * (100 / slidesPerPage);
+        slider.style.marginLeft = currentMargin + '%';
+        if (currentPosition > 0) {
+            buttons[0].classList.remove('inactive');
+        }
+        if (currentPosition < slidesCount) {
+            buttons[1].classList.remove('inactive');
+        }
+        if (currentPosition >= slidesCount) {
+            buttons[1].classList.add('inactive');
+        }
+    }
+    
+    setParams();
+    
+    function slideRight() {
+        if (currentPosition != 0) {
+            slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
+            currentMargin += (100 / slidesPerPage);
+            currentPosition--;
+        };
+        if (currentPosition === 0) {
+            buttons[0].classList.add('inactive');
+        }
+        if (currentPosition < slidesCount) {
+            buttons[1].classList.remove('inactive');
+        }
+    };
+    
+    function slideLeft() {
+        if (currentPosition != slidesCount) {
+            slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
+            currentMargin -= (100 / slidesPerPage);
+            currentPosition++;
+        };
+        if (currentPosition == slidesCount) {
+            buttons[1].classList.add('inactive');
+        }
+        if (currentPosition > 0) {
+            buttons[0].classList.remove('inactive');
+        }
+    };
+        </script>
+    
+    
+
+        <section>
+            <section class="intro-section " data-dl-title="Join us">
+                <div class="container intro-container mar-bot-100 mar-top-100">
+                  <div class="row">
+                    <div class="col-12 col-lg-1 order-2"></div>
+                    <div class="col-lg-5 text-intro-box d-flex align-items-center order-1">
+                      <div class="pr-0 pr-md-0 intro-content">
+                        <h2 class="intro-heading text-uppercase mb-3" style="color:#000000">Join us</h2>
+                        <h3 class="intro-description ">Intern with TCS</h3>
+              
+                        <div class="article-tags my-3">
+              
+                        </div>
+              
+                        <div class="intro-text rte-links-div">
+                          <p>TCS makes it possible for you to achieve your fullest potential. We nurture our talent, and equip them to contribute to the creation of a better future. With exciting opportunities across a breadth of domains and industries, we encourage you to take the initial steps toward a fulfilling career with us.</p>
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="col-lg-6 intro-player-box px-lg-0 order-2 ">
+                      <div class="text-with-assets-image-div d-flex align-items-center h-100 w-100">
+                        <div class="text-with-assets-image-innr-div w-100">
+              
+                          <div id="dynamicmedia_35301375" data-current-page="/content/tcs/global/en/careers/india/internship" data-page-locale="en" data-asset-path="TCSCOMprod/AdobeStock_491498665" data-asset-name="AdobeStock_491498665.jpeg" data-asset-type="image" data-viewer-path="https://s7ap1.scene7.com/s7viewers/" data-imageserver="https://s7ap1.scene7.com/is/image/" data-videoserver="https://s7ap1.scene7.com/is/content/" data-contenturl="https://s7ap1.scene7.com/is/content/" data-wcmdisabled="" data-dms7="" data-mode="smartcrop" data-alt="Intern holding coffee mug" class="s7dm-dynamic-media" data-custom-class="dynamic-media-image fit-cover">
+                            <div class="s7responsiveContainer">
+                              <img id="dynamicmedia_35301375_resp" src="https://s7ap1.scene7.com/is/image/TCSCOMprod/AdobeStock_491498665:Extra-Medium?wid=1641&amp;hei=1361&amp;dpr=off" data-src="https://s7ap1.scene7.com/is/image/TCSCOMprod/AdobeStock_491498665" class="fluidimage dynamic-media-image fit-cover" data-mode="smartcrop" data-enablehd="always" alt="Intern holding coffee mug" style="width: 100%;">
+                            </div>
+                          </div>
+              
+                        </div>
+                      </div>
+                    </div>
+              
+                  </div>
+                </div>
+              </section>
+              
+              <section class="intro-section" data-dl-title="AIESEC INTERNSHIP">
+                <div class="container intro-container">
+                  <div class="row">
+                    <div class="col-12 col-lg-1 order-2"></div>
+                    <div class="col-lg-5 text-intro-box d-flex align-items-center order-2 pl-3 pl-md-0">
+                      <div class="pr-0 pr-md-0 intro-content">
+                        <h2 class="intro-heading text-uppercase mb-3" style="color:#000000">AIESEC INTERNSHIP</h2>
+                        <h3 class="intro-description ">ACE career development programa</h3>
+              
+                        <div class="article-tags my-3">
+              
+                        </div>
+              
+                        <div class="intro-text rte-links-div">
+                          <p>TCS is recognized as a Global Exchange Partner of AIESEC. ACE Program provides career development opportunities for more than 200 AIESEC interns annually. It helps you Accelerate, Connect and Experience certainty with your internship with us.</p>
+                        </div>
+              
+                        <div class="content-link">
+                          <a href="https://www.tcs.com/careers/india/ace" class="  arrow-text2 position-relative cta-link-focus tcs-section-click">Read more about ACE</a>
+                        </div>
+              
+                      </div>
+                    </div>
+              
+                    <div class="col-lg-6 intro-player-box px-lg-0 order-1 ">
+                      <div class="text-with-assets-image-div d-flex align-items-center h-100 w-100">
+                        <div class="text-with-assets-image-innr-div w-100">
+              
+                          <div id="dynamicmedia_132342352" data-current-page="/content/tcs/global/en/careers/india/internship" data-page-locale="en" data-asset-path="TCSCOMprod/nokia-card" data-asset-name="nokia-card.jpg" data-asset-type="image" data-viewer-path="https://s7ap1.scene7.com/s7viewers/" data-imageserver="https://s7ap1.scene7.com/is/image/" data-videoserver="https://s7ap1.scene7.com/is/content/" data-contenturl="https://s7ap1.scene7.com/is/content/" data-wcmdisabled="" data-dms7="" data-mode="smartcrop" data-alt="ACE career development programa" class="s7dm-dynamic-media" data-custom-class="dynamic-media-image fit-cover">
+                            <div class="s7responsiveContainer">
+                              <img id="dynamicmedia_132342352_resp" src="https://s7ap1.scene7.com/is/image/TCSCOMprod/nokia-card:Extra-Medium?wid=1330&amp;hei=1103&amp;dpr=off" data-src="https://s7ap1.scene7.com/is/image/TCSCOMprod/nokia-card" class="fluidimage dynamic-media-image fit-cover" data-mode="smartcrop" data-enablehd="always" alt="ACE career development programa" style="width: 100%;">
+                            </div>
+                          </div>
+              
+                        </div>
+                      </div>
+                    </div>
+              
+                  </div>
+                </div>
+              </section>
+            </section>
+              
+
+        <section id="counter" class="sec-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 ">
+                        <div class="count"> <span class="fa fa-smile-o"></span>
+                            <p class="number" style="color: #fff;">126</p>
+                            <h4>OUR EMPLOYEES</h4> </div>
+                    </div>
+                    <div class="col-md-3 ">
+                        <div class="count"> <span class="fa fa-smile-o"></span>
+                            <p class="number" style="color: #fff;">535</p>
+                            <h4>NATIONALITIES</h4> </div>
+                    </div>
+                    <div class="col-md-3 ">
+                        <div class="count"> <span class="fa fa-smile-o"></span>
+                            <p class="number" style="color: #fff;">896</p>
+                            <h4>Total Hours</h4> </div>
+                    </div>
+                    <div class="col-md-3 ">
+                        <div class="count"> <span class="fa fa-smile-o"></span>
+                            <p class="number" style="color: #fff;">777</p>
+                            <h4>Projects Complete</h4> </div>
+                    </div>
+                </div>
+            </div>
+    
+            <script>
+                $(document).ready(function() {
+                  // Function to animate counting
+                  function animateCounting(element, targetValue) {
+                    $({ countNum: 0 }).animate(
+                      {
+                        countNum: targetValue,
+                      },
+                      {
+                        duration: 2000, // Adjust the duration as needed (in milliseconds)
+                        easing: "linear", // You can use "swing" for a different animation style
+                        step: function() {
+                          // Update the number text during the animation
+                          $(element).text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                          // Update the number text after the animation is complete
+                          $(element).text(targetValue);
+                        },
+                      }
+                    );
+                  }
+              
+                  // Call the animateCounting function for each element
+                  $(".number").each(function() {
+                    var targetValue = parseInt($(this).text()); // Get the target number from the element's text
+                    animateCounting(this, targetValue); // Start the counting animation for each element
+                  });
+                });
+              </script>
+              
+        </section>
+
+
+        <section class="about-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
+                        <div class="services-info">
+                            <h2 class="text-white mb-4">About Asterisc Technocrat  </h2>
+
+                            <p class="text-white">Asterisc Technocrat AN ISO 9001:2015 Internationally Certified & Central 
+                                India's high rating for Google reviews & most trusted company in nagpur, We are a superb custom 
+                                software development company in nagpur delivering impressive business IT Solutions and related services 
+                                to customers across the world. 
+
+                            </p>
+
+                            <h6 class="text-white mt-4">Employment Experience</h6>
+
+                            <p class="text-white">At Asterisc Technocrat, we care of our employees and our clients, they are most important part in our company. </p>
+
+                            <h6 class="text-white mt-4">24/7 Support</h6>
+
+                            <p class="text-white">Our support and marketing strategies are available 24/7 for your business growth.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="about-text-wrap">
+                            <img src="images/technocrat.png" class="about-image img-fluid">
+
+                            <!-- <div class="about-text-info d-flex">
+                                <div class="d-flex">
+                                    <i class="about-text-icon bi-person"></i>
+                                </div>
+
+
+                                <div class="ms-4">
+                                    <h3>a happy moment</h3>
+
+                                    <p class="mb-0">your amazing festival experience with us</p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+       
+   
+        <section class="artists-section section-padding " id="section_3">
+            <div class="container ">
+                <div class="row justify-content-center">
+
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">MEET US    </h1>
+                    </div>
+
+                    <div class="col-lg-4 col-8 ">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="images/chandrakant.jpg"
+                                    class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p class="text-white">
+                                    <strong>Name:</strong>
+                                    Chnadrakant Bobade
+                                </p>
+
+
+                                <p class="text-white">
+                                    <strong>Position:</strong>
+                                    CEO/Instructor
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>Social Handle:</strong>
+                                    <a href="#">-</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-8">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="images/shrikant.jpg"
+                                    class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p class="text-white">
+                                    <strong>Name:</strong>
+                                    Shrikant Bobade
+                                </p>
+
+                              
+
+                                <p class="text-white">
+                                    <strong>Position:</strong>
+                                    Director
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>Youtube Channel:</strong>
+                                    <a href="#">-</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-8">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="images/pooja2.jpg"
+                                    class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p class="text-white">
+                                    <strong>Name:</strong>
+                                    Pooja Sao
+                                </p>
+
+                              
+
+                                <p class="text-white">
+                                    <strong>Position:</strong>
+                                    Manager/Instructor
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0 ">
+                                    <strong>Social Handle:</strong>
+                                    <a href="#">-</a>
+                                </p>
+                            </div>
+                        </div>
+                       
+                       
+                </div>
+            </div>
+        </section>
+
+
+        <section class="schedule-section section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h2 class="text-white mb-4">Event Schedule</h1>
+
+                            <div class="table-responsive">
+                                <table class="schedule-table table table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Date</th>
+
+                                            <th scope="col">Wednesday</th>
+
+                                            <th scope="col">Thursday</th>
+
+                                            <th scope="col">Friday</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Day 1</th>
+
+                                            <td class="table-background-image-wrap pop-background-image">
+                                                <h3>Pop Night</h3>
+
+                                                <p class="mb-2">5:00 - 7:00 PM</p>
+
+                                                <p>By Adele</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #F3DCD4"></td>
+
+                                            <td class="table-background-image-wrap rock-background-image">
+                                                <h3>Rock & Roll</h3>
+
+                                                <p class="mb-2">7:00 - 11:00 PM</p>
+
+                                                <p>By Rihana</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Day 2</th>
+
+                                            <td style="background-color: #ECC9C7"></td>
+
+                                            <td>
+                                                <h3>DJ Night</h3>
+
+                                                <p class="mb-2">6:30 - 9:30 PM</p>
+
+                                                <p>By Rihana</p>
+                                            </td>
+
+                                            <td style="background-color: #D9E3DA"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Day 3</th>
+
+                                            <td class="table-background-image-wrap country-background-image">
+                                                <h3>Country Music</h3>
+
+                                                <p class="mb-2">4:30 - 7:30 PM</p>
+
+                                                <p>By Rihana</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #D1CFC0"></td>
+
+                                            <td>
+                                                <h3>Free Styles</h3>
+
+                                                <p class="mb-2">6:00 - 10:00 PM</p>
+
+                                                <p>By Members</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="pricing-section section-padding section-bg" id="section_5">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="text-center mb-4">Plans, you' love</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="pricing-thumb">
+                            <div class="d-flex">
+                                <div>
+                                    <h3><small>Early Bird</small> $120</h3>
+
+                                    <p>Including good things:</p>
+                                </div>
+
+                                <p class="pricing-tag ms-auto">Save up to <span>50%</span></h2>
+                            </div>
+
+                            <ul class="pricing-list mt-3">
+                                <li class="pricing-list-item">platform for potential customers</li>
+
+                                <li class="pricing-list-item">digital experience</li>
+
+                                <li class="pricing-list-item">high-quality sound</li>
+
+                                <li class="pricing-list-item">standard content</li>
+                            </ul>
+
+                            <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
+                                <span>Buy Ticket</span>
+                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="16" cy="16" r="15.5"></circle>
+                                        <line x1="10" y1="18" x2="16" y2="12"></line>
+                                        <line x1="16" y1="12" x2="22" y2="18"></line>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12 mt-4 mt-lg-0">
+                        <div class="pricing-thumb">
+                            <div class="d-flex">
+                                <div>
+                                    <h3><small>Standard</small> $240</h3>
+
+                                    <p>What makes a premium festava?</p>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-list mt-3">
+                                <li class="pricing-list-item">platform for potential customers</li>
+
+                                <li class="pricing-list-item">digital experience</li>
+
+                                <li class="pricing-list-item">high-quality sound</li>
+
+                                <li class="pricing-list-item">premium content</li>
+
+                                <li class="pricing-list-item">live chat support</li>
+                            </ul>
+
+                            <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
+                                <span>Buy Ticket</span>
+                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="16" cy="16" r="15.5"></circle>
+                                        <line x1="10" y1="18" x2="16" y2="12"></line>
+                                        <line x1="16" y1="12" x2="22" y2="18"></line>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact-section section-padding" id="section_6">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="text-center mb-4">Interested? Let's talk</h2>
+
+                        <nav class="d-flex justify-content-center">
+                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
+                                role="tablist">
+                                <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactForm" type="button" role="tab"
+                                    aria-controls="nav-ContactForm" aria-selected="false">
+                                    <h5>Contact Form</h5>
+                                </button>
+
+                                <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactMap" type="button" role="tab"
+                                    aria-controls="nav-ContactMap" aria-selected="false">
+                                    <h5>Google Maps</h5>
+                                </button>
+                            </div>
+                        </nav>
+
+                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
+                                aria-labelledby="nav-ContactForm-tab">
+                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
+                                    role="form">
+                                    <div class="contact-form-body">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="text" name="contact-name" id="contact-name"
+                                                    class="form-control" placeholder="Full name" required>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="email" name="contact-email" id="contact-email"
+                                                    pattern="[^ @]*@[^ @]*" class="form-control"
+                                                    placeholder="Email address" required>
+                                            </div>
+                                        </div>
+
+                                        <input type="text" name="contact-company" id="contact-company"
+                                            class="form-control" placeholder="Company" required>
+
+                                        <textarea name="contact-message" rows="3" class="form-control"
+                                            id="contact-message" placeholder="Message"></textarea>
+
+                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                            <button type="submit" class="form-control">Send message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
+                                aria-labelledby="nav-ContactMap-tab">
+                                <iframe class="google-map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.462012487345!2d79.04085031501513!3d21.173797885920052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1c265f22f29%3A0xa545e687899856fe!2sAsterisc%20Technocrat%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1678067222820!5m2!1sen!2sin"
+                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">Asterisc Technocrat</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-apple"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">About</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Team</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Schedule</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Pricing</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 7744822228" class="site-footer-link">
+                            +91&nbsp;&nbsp;7744822228
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:hello@asterisc.in" class="site-footer-link">
+                            hello@asterisc.in
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        151, Friends Colony, Nagpur</p>
+
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                        <span>Our Maps</span>
+                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="16" cy="16" r="15.5"></circle>
+                                <line x1="10" y1="18" x2="16" y2="12"></line>
+                                <line x1="16" y1="12" x2="22" y2="18"></line>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mt-5">
+                        <p class="copyright-text">Copyright  @2018-23 | Designed by Asterisc Technocrat Pvt. Ltd.</p>
+                        <p class="copyright-text">Distributed by: <a href="https://www.technocrat.asterisc.in/index.html">AsteriscTechnocrat</a></p>
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Privacy Policy</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Your Feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
